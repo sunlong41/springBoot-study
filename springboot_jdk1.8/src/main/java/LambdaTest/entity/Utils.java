@@ -44,4 +44,8 @@ public class Utils {
                 ", name='" + name + '\'' +
                 '}';
     }
+
+    public static String util2(String s) {
+        return s;
+    }
 }
