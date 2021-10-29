@@ -5,6 +5,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ForkJoinPool;
 
 public class LambdaCollections {
     /**
@@ -52,4 +54,19 @@ public class LambdaCollections {
         //System.out.println("----------------------------------");
        // list1.stream().filter(s ->{ return s instanceof Integer;}).forEach(System.out::println);
     }
+
+    @Test
+    public void test3(){
+        //并行Streams
+        //由于默认并行流使用的是全局的线程池,线程数量是根据cpu核数设置的,所以如果某个操作占用了线程,将影响全局其他使用并行流的操作;
+        //所以折中的方案是自定义线程池来执行某个并行流操作;
+        ForkJoinPool forkJoinPool = new ForkJoinPool(10);
+        List listByPage = new CopyOnWriteArrayList();
+        forkJoinPool.execute(() -> {
+            listByPage.parallelStream().forEach(str -> {
+
+            });
+        });
+    }
+
 }
