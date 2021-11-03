@@ -35,4 +35,9 @@ public class test {
         String s = jsonSerial.serial(new Person("1", "22"));
         System.out.println(s);
     }
+
+    @Test
+    public void test3(){
+
+    }
 }

@@ -10,4 +10,5 @@ public class MyAutoConfiguration {
     public JsonSerial jsonSerial(){
         return new JsonSerial();
     }
+
 }
