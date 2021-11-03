@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "spring.boot.spring.boot.entity.EntityProperties",
+      "type": "spring.boot.spring.boot.entity.EntityProperties",
+      "sourceType": "spring.boot.spring.boot.entity.EntityProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.boot.spring.boot.entity.EntityProperties.a",
+      "type": "java.lang.String",
+      "sourceType": "spring.boot.spring.boot.entity.EntityProperties"
+    },
+    {
+      "name": "spring.boot.spring.boot.entity.EntityProperties.b",
+      "type": "java.lang.String",
+      "sourceType": "spring.boot.spring.boot.entity.EntityProperties"
+    },
+    {
+      "name": "spring.boot.spring.boot.entity.EntityProperties.c",
+      "type": "java.lang.String",
+      "sourceType": "spring.boot.spring.boot.entity.EntityProperties"
+    }
+  ],
+  "hints": []
+}
