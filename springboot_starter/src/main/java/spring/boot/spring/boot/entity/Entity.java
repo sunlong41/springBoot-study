@@ -1,6 +1,8 @@
 package spring.boot.spring.boot.entity;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class Entity {
     private String a;
     private String b;

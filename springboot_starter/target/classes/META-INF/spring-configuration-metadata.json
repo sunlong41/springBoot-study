@@ -1,24 +1,24 @@
 {
   "groups": [
     {
-      "name": "spring.boot.spring.boot.entity.EntityProperties",
+      "name": "entity.service",
       "type": "spring.boot.spring.boot.entity.EntityProperties",
       "sourceType": "spring.boot.spring.boot.entity.EntityProperties"
     }
   ],
   "properties": [
     {
-      "name": "spring.boot.spring.boot.entity.EntityProperties.a",
+      "name": "entity.service.a",
       "type": "java.lang.String",
       "sourceType": "spring.boot.spring.boot.entity.EntityProperties"
     },
     {
-      "name": "spring.boot.spring.boot.entity.EntityProperties.b",
+      "name": "entity.service.b",
       "type": "java.lang.String",
       "sourceType": "spring.boot.spring.boot.entity.EntityProperties"
     },
     {
-      "name": "spring.boot.spring.boot.entity.EntityProperties.c",
+      "name": "entity.service.c",
       "type": "java.lang.String",
       "sourceType": "spring.boot.spring.boot.entity.EntityProperties"
     }

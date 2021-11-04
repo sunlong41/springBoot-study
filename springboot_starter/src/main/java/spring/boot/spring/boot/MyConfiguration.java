@@ -1,6 +1,5 @@
 package spring.boot.spring.boot;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -16,7 +15,7 @@ import javax.annotation.Resource;
 @EnableConfigurationProperties(EntityProperties.class)   //开启配置文件
 public class MyConfiguration {
 
-    @Autowired
+    @Resource
     private EntityProperties properties; //注入配置文件
 
     @Bean

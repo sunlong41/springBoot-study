@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-@ConfigurationProperties(prefix = "spring.boot.spring.boot.entity.EntityProperties",ignoreUnknownFields = true)  //读yml里的该路径
+@ConfigurationProperties(prefix = "entity.service",ignoreUnknownFields = true)  //读yml里的该路径
 public class EntityProperties {
 
     private String a;
