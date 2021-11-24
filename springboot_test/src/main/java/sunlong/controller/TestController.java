@@ -14,10 +14,12 @@ public class TestController {
     private JsonSerial js;
     @Autowired
     private Entity vo;
+
     @RequestMapping("/hello")
     public String index() {
-        return js.serial(new Person("22","22"));
+        return js.serial(new Person("22", "22"));
     }
+
     @RequestMapping("/test")
     public String indexx() {
         return js.serial(vo);

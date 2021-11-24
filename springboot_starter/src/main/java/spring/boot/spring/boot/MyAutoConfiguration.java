@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class MyAutoConfiguration {
 
     @Bean
-    public JsonSerial jsonSerial(){
+    public JsonSerial jsonSerial() {
         return new JsonSerial();
     }
 

@@ -16,6 +16,7 @@ public class TestController {
 
     @RequestMapping("/hello")
     public String test() {
+        System.out.println("sssssss");
         return vo.consumer();
     }
 }

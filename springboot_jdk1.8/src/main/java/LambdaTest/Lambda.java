@@ -17,26 +17,28 @@ public class Lambda {
      * Java 8 允许你使用 :: 关键字来传递方法或者构造函数引用，上面的代码展示了如何引用一个静态方法，我们也可以引用一个对象的方法
      */
     @Test
-    public  void test1(){
+    public void test1() {
         //测试非静态方法调用
         Consumer<Utils> util1 = Utils::util1;
         util1.accept(new Utils());
     }
 
     @Test
-    public  void test2(){
+    public void test2() {
         //测试静态方法调用
         Runnable util2 = Utils::util2;
         util2.run();
     }
+
     @Test
-    public  void test3(){
+    public void test3() {
         //测试调用空参构造
         Runnable runnable = Utils::new;
         runnable.run();
     }
+
     @Test
-    public  void test4(){
+    public void test4() {
         BiFunction<String, String, Utils> runnable = Utils::new;
         Utils utils = runnable.apply("1", "2");
         System.out.println(utils.toString());
@@ -44,8 +46,9 @@ public class Lambda {
 
     private int x;
     private int y;
+
     @Test
-    public  void test5(){
+    public void test5() {
         IntConsumer tConsumer = (z) -> {
             x = 1;
             System.out.println(x);
@@ -55,7 +58,7 @@ public class Lambda {
     }
 
     @Test
-    public  void test6(){
+    public void test6() {
         /**
          * Predicate接口
          *
@@ -74,7 +77,7 @@ public class Lambda {
     }
 
     @Test
-    public  void test7(){
+    public void test7() {
         /**
          * Function 接口
          *
@@ -87,19 +90,19 @@ public class Lambda {
     }
 
     @Test
-    public  void test8(){
+    public void test8() {
         Function<String[], List<String>> list = Arrays::asList;
-        String[] strings = {"1","2","3"};
+        String[] strings = {"1", "2", "3"};
         List<String> nums = list.apply(strings);
         //  第一种遍历方式：
 
-        nums.forEach(s->{
+        nums.forEach(s -> {
             System.out.println(s);
         });
         System.out.println("=====================");
 
         //第二种遍历方式：
-        nums.forEach(s-> System.out.println(s));
+        nums.forEach(s -> System.out.println(s));
 
         System.out.println("==========================");
         //第三种遍历方式：

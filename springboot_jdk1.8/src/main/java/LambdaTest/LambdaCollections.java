@@ -18,7 +18,8 @@ public class LambdaCollections {
      */
     private static List list = new ArrayList();
     private static List<Integer> list1 = new ArrayList<>();
-    static{
+
+    static {
         list.add(1);
         list.add(2);
         list.add("3");
@@ -31,7 +32,7 @@ public class LambdaCollections {
     }
 
     @Test
-    public void test1(){
+    public void test1() {
         //简单便利
         list.forEach(System.out::println);
         System.out.println("-----------------------");
@@ -39,7 +40,8 @@ public class LambdaCollections {
         List<Integer> list3 = new ArrayList<>();
         list3.add(1);
         list3.add(2);
-        list3.stream().forEach(s->{s=s+1;
+        list3.stream().forEach(s -> {
+            s = s + 1;
             System.out.println(s);
         });
         //由于是以流方式，所以怎么操作也不改变原来的集合
@@ -48,15 +50,15 @@ public class LambdaCollections {
     }
 
     @Test
-    public void test2(){
+    public void test2() {
         //filter 过滤
         list.stream().filter(s -> s instanceof Integer).forEach(System.out::println);
         //System.out.println("----------------------------------");
-       // list1.stream().filter(s ->{ return s instanceof Integer;}).forEach(System.out::println);
+        // list1.stream().filter(s ->{ return s instanceof Integer;}).forEach(System.out::println);
     }
 
     @Test
-    public void test3(){
+    public void test3() {
         //并行Streams
         //由于默认并行流使用的是全局的线程池,线程数量是根据cpu核数设置的,所以如果某个操作占用了线程,将影响全局其他使用并行流的操作;
         //所以折中的方案是自定义线程池来执行某个并行流操作;

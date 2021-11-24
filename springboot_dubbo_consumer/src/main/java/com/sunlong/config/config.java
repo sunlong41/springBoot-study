@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class config {
     @Bean
-    public Consumer get(){
+    public Consumer get() {
         System.out.println("从配置文件里面获取ConsumerImpl");
         return new ConsumerImpl();
     }

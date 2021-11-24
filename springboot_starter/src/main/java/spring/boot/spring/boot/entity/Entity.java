@@ -10,11 +10,13 @@ public class Entity {
 
     @Override
     public String toString() {
-        return a+b+c;
+        return a + b + c;
     }
+
     public String toString(String p) {
-        return a+b+c+p;
+        return a + b + c + p;
     }
+
     public Entity() {
     }
 

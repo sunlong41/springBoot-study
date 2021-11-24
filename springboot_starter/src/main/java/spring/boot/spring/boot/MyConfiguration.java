@@ -21,6 +21,6 @@ public class MyConfiguration {
     @Bean
     @ConditionalOnMissingBean()     //该注解的意思是如果没有发现service的bean就执行新建一个bean
     public Entity entity() {
-        return new Entity(properties.getA(), properties.getB(),properties.getC());
+        return new Entity(properties.getA(), properties.getB(), properties.getC());
     }
 }

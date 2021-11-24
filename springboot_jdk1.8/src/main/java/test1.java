@@ -11,8 +11,9 @@ import spring.boot.spring.boot.entity.Entity;
 public class test1 {
     @Autowired
     private Entity vo;
+
     @Test
-    public void test(){
+    public void test() {
         String s = vo.toString();
         System.out.println(s);
     }

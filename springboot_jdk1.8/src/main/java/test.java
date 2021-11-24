@@ -25,19 +25,20 @@ public class test {
     }
 
     @Test
-    public void test1(){
+    public void test1() {
         String s = jsonSerial.serial(new Person("1", "22"));
         System.out.println(s);
     }
+
     @Test
-    public void test2(){
+    public void test2() {
         JsonSerial jsonSerial = (JsonSerial) aa.getBean("jsonSerial");
         String s = jsonSerial.serial(new Person("1", "22"));
         System.out.println(s);
     }
 
     @Test
-    public void test3(){
+    public void test3() {
 
     }
 }

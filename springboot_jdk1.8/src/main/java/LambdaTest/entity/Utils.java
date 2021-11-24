@@ -1,10 +1,11 @@
 package LambdaTest.entity;
 
 public class Utils {
-    public void util1(){
+    public void util1() {
         System.out.println("普通方法1");
     }
-    public static void util2(){
+
+    public static void util2() {
         System.out.println("静态方法1");
     }
 

@@ -13,6 +13,7 @@ public class ConsumerImpl implements Consumer {
     //拿到服务提供方的接口
     @Reference
     TestServer service;
+
     @Override
     public String consumer() {
         String s = service.test();

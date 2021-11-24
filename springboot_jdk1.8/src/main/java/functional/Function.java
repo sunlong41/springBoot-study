@@ -7,12 +7,13 @@ interface Function {
      * default 修饰的方法可以不用被子类继承
      */
     double calculate(int a);
+
     default double sqrt(int a) {
         return Math.sqrt(a);
     }
 }
 
-class Test{
+class Test {
     public static void main(String[] args) {
         /**
          * 实现了Function接口的子类只需要实现一个calculate方法，默认方法sqrt将在子类上可以直接使用。
