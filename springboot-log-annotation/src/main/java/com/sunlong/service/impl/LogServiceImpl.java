@@ -29,8 +29,10 @@ public class LogServiceImpl implements LogService {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }finally {
+            //dosomething
+            String s = annotation.moduleName();
+            String option = annotation.option();
             //获取方法名
-
             Method method=((MethodSignature)pj.getSignature()).getMethod();
             System.out.println("方法名："+method.getName());
             //获取系统时间
