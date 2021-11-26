@@ -1,0 +1,7 @@
+
+
+logging:
+  # 设置logback.xml位置
+  #  config: classpath:log/logback.xml
+  # 设置log4j.properties位置
+  config: classpath:log4j.properties
