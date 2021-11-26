@@ -5,10 +5,7 @@ import com.sunlong.annotation.Mylog;
 import com.sunlong.service.LogService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -31,6 +28,11 @@ public class LogAspect {
     /**
      * 切入点
      * com.sunlong.service.impl
+     * execution表达式
+     * execution表示需要嵌入的包类和方法，精度是到方法。其中表示通配。
+     * 例: * com.trusfort…sdk.controller..(…)
+     * !execution表示需要排除的方法，表达式之间用&&或 || 符号连接，需要注意此处逻辑关系。
+     * 例：* com.trusfort…sdk.controller.AuthTokenController.genToken2(…)
      */
     @Pointcut("execution(public * com.sunlong.service.impl..*.*(..))")
     public void serviceLogAspect() {
@@ -40,25 +42,29 @@ public class LogAspect {
      * 通知
      * @param
      */
-/*    @Before(value="@annotation(com.sunlong.annotation.Mylog)")
-    public void dofore(JoinPoint jp) {
-        try {
-            //通过获取Mylog注解
-            Method proxyMethod = ((MethodSignature) jp.getSignature()).getMethod();
-            Method targetMethod = jp.getTarget().getClass().getMethod(proxyMethod.getName(), proxyMethod.getParameterTypes());
-            Mylog Mylog = targetMethod.getAnnotation(Mylog.class);
-            ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-            HttpServletRequest request = attributes.getRequest();
-            //处理注解逻辑
-            String age = Mylog.moduleName();
-            String tip = "";
+    @Before("execution(public * com.sunlong.service.impl.*(..))")
+    public void before(){
+        System.out.println("执行方法前======");
+    }
+    @After("execution(public * com.sunlong.service.impl.*(..))")
+    public void after(){
+        System.out.println("执行方法后=====");
+    }
+    @Around("execution(public * com.sunlong.service.impl.*(..))")
+    public void round(ProceedingJoinPoint joinPoint) throws Throwable{
+        System.out.println("环绕前");
+        System.out.println(joinPoint.getSignature());
+        Object proceed = joinPoint.proceed();
+        System.out.println("环绕后");
+        System.out.println(proceed);
+    }
 
-            request.setAttribute("tip", tip);
-        } catch (Throwable e) {
-            System.out.println("有异常啊");
-        }
-    }*/
-
+    /**
+     * 前置通知在业务代码执行之前执行，后置通知在业务代码之后执行，异常通知在业务代码发生异常时执行，最终通知在最后执行
+     * @param pj
+     * @param annotation
+     * @return
+     */
     @Around(value = "serviceLogAspect() && @annotation(annotation) &&args(..) ", argNames = "pj,annotation")
     public String interceptorApplogic(ProceedingJoinPoint pj, Mylog annotation){
 

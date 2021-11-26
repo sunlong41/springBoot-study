@@ -15,4 +15,9 @@ public class TestService {
         }
         return  "failed";
     }
+
+    @Mylog(moduleName = "模块X",option = "更新")
+    public  String test1(){
+        return "1";
+    }
 }
